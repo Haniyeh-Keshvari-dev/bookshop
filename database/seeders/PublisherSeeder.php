@@ -15,10 +15,21 @@ class PublisherSeeder extends Seeder
      */
     public function run(): void
     {
-        Publisher::insert([
-            ['name' => 'Bloomsbury'],
-            ['name' => 'Penguin'],
-            ['name' => 'HarperCollins'],
+        Publisher::create([
+            'name' => 'Library',
+            'logo' => 'item3.png',
+            'website_url' => 'https://openlibrary.org/',
+        ]);
+
+        Publisher::create([
+            'name' => 'bookdoor',
+            'logo' => 'item4.png',
+            'website_url' => 'https://www.thebookdoor.com/',
+        ]);
+        Publisher::create([
+            'name' => 'bookstore',
+            'logo' => 'item5.png',
+            'website_url' => 'https://www.bookstores.com/',
         ]);
     }
 }

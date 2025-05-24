@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Author;
 
 class Book extends Model
 {
@@ -15,12 +17,12 @@ class Book extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function reviews()
+    public function review()
     {
         return $this->hasMany(Review::class);
     }
 
-    public function authors()
+    public function author()
     {
         return $this->belongsTo(Author::class);
     }
