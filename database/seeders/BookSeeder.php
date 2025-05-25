@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Author;
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,7 @@ class BookSeeder extends Seeder
      */
     public function run(): void
     {
+
         $author=Author::all();
         foreach ($author as $authors) {
             Book::create([
@@ -26,6 +28,7 @@ class BookSeeder extends Seeder
                 'stock' => 10,
                 'download_link' => null,
                 'author_id' => $authors->id,
+                'category_id' => Category::inRandomOrder()->first()->id,
 
             ]);
 
@@ -39,6 +42,7 @@ class BookSeeder extends Seeder
                 'stock' => 100,
                 'download_link' => 'harry_potter.pdf',
                 'author_id' => $authors->id,
+                'category_id' => Category::inRandomOrder()->first()->id,
             ]);
             Book::create([
                 'title' => 'Great travel at desert',
@@ -50,6 +54,7 @@ class BookSeeder extends Seeder
                 'stock' => 100,
                 'download_link' => 'harry_potter.pdf',
                 'author_id' => $authors->id,
+                'category_id' => Category::inRandomOrder()->first()->id,
             ]);
             Book::create([
                 'title' => 'Simple way of piece life',
@@ -61,6 +66,7 @@ class BookSeeder extends Seeder
                 'stock' => 100,
                 'download_link' => 'harry_potter.pdf',
                 'author_id' => $authors->id,
+                'category_id' => Category::inRandomOrder()->first()->id,
             ]);
         }
     }

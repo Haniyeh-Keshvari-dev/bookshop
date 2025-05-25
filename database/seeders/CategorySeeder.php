@@ -13,11 +13,26 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        $literature = Category::create(['name' => 'ادبیات']);
+        $category = (
+        [
+            'name' => 'All Genre',
+            'Business',
+            'Technology',
+            'Romantic',
+            'Adventure',
+            'Fictional'
+        ]
 
-        Category::insert([
-            ['name' => 'عاشقانه', 'parent_id' => $literature->id],
-            ['name' => 'کلاسیک', 'parent_id' => $literature->id],
-        ]);
+        );
+        foreach ($category as $cat) {
+            Category::create([
+                'name' => $cat
+            ]);
+        }
+
+//        Category::insert([
+//            ['name' => 'عاشقانه', 'parent_id' => $literature->id],
+//            ['name' => 'کلاسیک', 'parent_id' => $literature->id],
+//        ]);
     }
 }
