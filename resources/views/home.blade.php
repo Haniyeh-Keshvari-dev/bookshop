@@ -102,13 +102,13 @@
                     <div class="row">
                         <div class="col-md-6 d-flex align-items-center justify-content-center">
                             @if($bestsaller)
-                            <figure class="product-style shadow"
-                                    style="max-width: 450px; width: 100%; background-color: #fdf7f0; padding: 30px;">
-                                <img src="{{ asset('images/' . $bestsaller->cover_image) }}"
-                                     alt="book"
-                                     class="img-fluid"
-                                     style="width: 100%; height: 100%; max-height: 500px; object-fit: cover; border-radius: 8px;">
-                            </figure>
+                                <figure class="product-style shadow"
+                                        style="max-width: 450px; width: 100%; background-color: #fdf7f0; padding: 30px;">
+                                    <img src="{{ asset('images/' . $bestsaller->cover_image) }}"
+                                         alt="book"
+                                         class="img-fluid"
+                                         style="width: 100%; height: 100%; max-height: 500px; object-fit: cover; border-radius: 8px;">
+                                </figure>
                             @endif
                         </div>
 
@@ -131,39 +131,15 @@
                         </div>
 
                     </div>
-                    <!-- / row -->
                 </div>
 
             </div>
         </div>
     </section>
-    <section id="popular-books" class="bookshelf py-5 my-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-header align-center">
-                        <div class="title">
-                            <span>Some quality items</span>
-                        </div>
-                        <h2 class="section-title">Popular Books</h2>
-                    </div>
-                    @include('categories.index')
-                </div>
-            </div>
-        </div>
 
-    </section>
+    <x-category-tabs/>
 
-    <section id="quotation" class="align-center pb-5 mb-5">
-        <div class="inner-content">
-            <h2 class="section-title divider">Quote of the day</h2>
-            <blockquote data-aos="fade-up">
-                <q>“The more that you read, the more things you will know. The more that you learn, the more places
-                    you’ll go.”</q>
-                <div class="author-name">Dr. Seuss</div>
-            </blockquote>
-        </div>
-    </section>
+{{--   <x-quote/>--}}
 
     <section id="special-offer" class="bookshelf pb-5 mb-5">
 

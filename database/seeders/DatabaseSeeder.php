@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             BookSeeder::class,
             BannerSeeder::class,
+            QuoteSeeder::class,
         ]);
 
         User::factory()->create([
