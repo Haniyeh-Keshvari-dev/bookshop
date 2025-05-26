@@ -6,22 +6,20 @@ use Closure;
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
 use App\Models\Quote;
+use Illuminate\Support\Facades\Cache;
 
-
-class Quotetab extends Component
+class QuoteOfTheDay extends Component
 {
     /**
      * Create a new component instance.
      */
-    public $text;
-    public $author;
+    public $quote;
 
     public function __construct()
     {
-        $quote = Quote::with('authors')->inRandomOrder()->first();
-
-        $this->text = $quote->quote ?? "quote not found";
-        $this->author = $quote->author->name ?? "author not found";
+        $this->quote = Cache::remember('quote_of_the_day', now()->endOfDay(), function () {
+            return Quote::with('author')->inRandomOrder()->first();
+        });
     }
 
 
@@ -30,6 +28,6 @@ class Quotetab extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.quote');
+        return view('components.quote-of-the-day');
     }
 }

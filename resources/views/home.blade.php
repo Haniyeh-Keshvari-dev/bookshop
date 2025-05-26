@@ -139,7 +139,7 @@
 
     <x-category-tabs/>
 
-{{--   <x-quote/>--}}
+    <x-quote-of-the-day/>
 
     <section id="special-offer" class="bookshelf pb-5 mb-5">
 
